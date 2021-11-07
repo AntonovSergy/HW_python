@@ -1,43 +1,23 @@
-a = []
-b = []
-c = []
-d = []
+my_list = []
+for num in range(1, 1001, 2):
+    my_list.append(num ** 3)
 
-for i in range(1, 1001):
-    if i % 2 != 0:
-        i **= 3
-        a.append(i)
+print(my_list)
 
-for num in a:
-    summa = 0
-    i = num
-    while num != 0:
-        summa += num % 10
-        num = num // 10
-    if summa % 7 == 0:
-        b.append(i)
+end_summa_1 = 0
+for num_1 in my_list:
+    all_count_1 = 0
+    for single_count_1 in str(num_1):
+        all_count_1 += int(single_count_1)
+        if all_count_1 % 7 == 0:
+            end_summa_1 += num_1
+print(f'First digit: {end_summa_1}')
 
-count_1 = 0
-for u in b:
-    count_1 += u
-
-print('a = ', count_1)
-
-for x in a:
-    x += 17
-    c.append(x)
-
-for num in c:
-    summa = 0
-    i = num
-    while num != 0:
-        summa += num % 10
-        num = num // 10
-    if summa % 7 == 0:
-        d.append(i)
-
-count_2 = 0
-for u in d:
-    count_2 += u
-
-print('b = ', count_2)
+end_summa_2 = 0
+for num_2 in my_list:
+    all_count_2 = 0
+    for single_count_2 in str(num_2):
+        all_count_2 += int(single_count_2)
+        if all_count_2 % 7 == 0:
+            end_summa_2 += num_2
+print(f'Second digit: {end_summa_2}')
